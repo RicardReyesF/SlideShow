@@ -6,7 +6,7 @@ import 'package:slide_show/src/models/slider_model.dart';
 class SliderWidget extends StatelessWidget {
   final List<Widget> sliders;
     SliderWidget({
-      @required this.sliders
+      @required this.sliders,
     });  
   @override
   
@@ -20,17 +20,8 @@ class SliderWidget extends StatelessWidget {
               Expanded(
                 child: _Slides(this.sliders)
               ),
-              _Dots(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _Dot(0),
-                  _Dot(1),
-                  _Dot(2),
-                ],
-              )
+              _Dots(this.sliders.length),
             ],
-             
           ),
         ),
     );
@@ -51,7 +42,7 @@ class _Dot extends StatelessWidget {
       width: 10,
       height: 10,
       decoration: BoxDecoration(
-        color: ( paginaActual >= index-0.5 && paginaActual< index+0.5) ? Colors.blue : Colors.grey,
+        color: ( paginaActual >= index-0.5 && paginaActual< index+0.5) ? Colors.red : Colors.grey,
         shape: BoxShape.circle
       ),
     );
@@ -59,11 +50,17 @@ class _Dot extends StatelessWidget {
 }
 
 class _Dots extends StatelessWidget {
+  final int numPag;
+  _Dots(this.numPag);
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       height: 50.0,
+      child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(this.numPag , (i) => _Dot(i))
+           )
     );
   }
 }

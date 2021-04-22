@@ -17,7 +17,8 @@ class _HomePageState extends State<HomePage> {
           SvgPicture.asset("assets/svgs/slide-2.svg"),
           SvgPicture.asset("assets/svgs/slide-3.svg"),
           SvgPicture.asset("assets/svgs/slide-4.svg"),
-          SvgPicture.asset("assets/svgs/slide-5.svg")
+          SvgPicture.asset("assets/svgs/slide-5.svg"),
+          SvgPicture.asset("assets/svgs/slide-5.svg"),
         ]
       ),
     );
