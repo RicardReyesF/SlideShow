@@ -12,6 +12,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SliderWidget(
+        points: false,
+        colorPrimario: Colors.pink,
+        colorSecundario: Colors.purple,
         sliders: <Widget>[
           SvgPicture.asset("assets/svgs/slide-1.svg"),
           SvgPicture.asset("assets/svgs/slide-2.svg"),
